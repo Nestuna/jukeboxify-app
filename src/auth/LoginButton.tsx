@@ -6,7 +6,7 @@ import React from "react";
 export const LoginButton = () => {
   return (
     <button
-      className="btn btn-accent"
+      className="btn btn-primary"
       onClick={async () => {
         await signIn();
       }}

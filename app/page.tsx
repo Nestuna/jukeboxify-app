@@ -1,11 +1,13 @@
 import { LoginButton } from "../src/auth/LoginButton";
+import { LogoutButton } from "../src/auth/LogoutButton";
+
 import { getAuthSession, getRequiredAuthSession } from "@/src/lib/auth";
 
 export default async function Home() {
   const session = await getAuthSession();
 
   if (session) {
-    return (
+     return (
       <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-base-300">
         <div className="card w-96 bg-base-100 shadow-xl">
           <div className="card-body">
@@ -17,6 +19,9 @@ export default async function Home() {
             <h2 className="card-title">{session.user?.name}</h2>
             <p>{session.user?.email}</p>
           </div>
+        </div>
+        <div>
+          <LogoutButton />
         </div>
       </main>
     );

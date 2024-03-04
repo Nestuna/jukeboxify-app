@@ -3,15 +3,15 @@
 import { signOut } from "next-auth/react";
 import React from "react";
 
-export const LoginButton = () => {
+export const LogoutButton = () => {
   return (
     <button
-      className="btn btn-accent"
+      className="btn btn-error"
       onClick={async () => {
         await signOut();
       }}
     >
-      Login
+      Logout
     </button>
   );
 };
